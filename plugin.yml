@@ -1,0 +1,10 @@
+
+name: RadiationWorld
+version: 1.0
+description: Fills the world with deadly radiation and corresponding features.
+author: RossGosling
+
+main: RadiationWorld.Main
+database: false
+
+commands:

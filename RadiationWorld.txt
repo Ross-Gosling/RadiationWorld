@@ -1,0 +1,41 @@
+
+X> Death
+
+    X- Upon dying you will recieve a cooldown period before being able to rejoin.
+    X- Cooldown needs to actually countdown
+
+X> Radiation
+
+    X- Radius around spawn is radiation-free.
+    
+    X- Radiation increases over time in radiated area.
+        X- Overworld iterates faster the further from haven up to a point when it stops.
+        X- Nether iterates at a flat rate.
+        X- End is radiation-free.
+        
+    X- Sunlight
+        X- Adds to the radiation of a player
+        
+    X- Persists through player disconnecting and server restarts
+        
+    X- Can be monitored with a clock
+
+    X- Resistance
+        X- Armour reduces the level of radiation recieved per iteration.
+            X- Leather
+            X- Gold
+            X- Iron
+            X- Chain
+            X- Diamond
+		        
+    X- Effects
+    	X- Reduced max health
+    	X- Death
+    	
+> Player Colours
+	X- Chat name colour
+	X- Tab name colour
+	- Above-head name colour
+	
+X> Animals are rare. 
+

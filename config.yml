@@ -1,0 +1,48 @@
+#RadiationWorld Configuration File
+
+#Radiation
+Radiation:
+
+    #Level of radiation required to kill
+    Lethal: 100
+
+    #Overworld settings
+    Overworld:
+        #BGRad (per second)
+        Background: 0.5 
+        #Haven settings
+        Haven:
+            #Radius of haven
+            Radius: 150
+            #Dist takes to recieve full BGRadiation
+            Buffer: 150
+        #Animal settings
+        Animals:
+            #Chance to spawn (% of vanilla chance)
+            ChanceToSpawn: 20.0
+
+    #The Nether settings
+    Nether:
+        #BGRad (per second)
+        Background: 1.0
+
+    #The End settings
+    End:
+        #BGRad (per second)
+        Background: 0.0
+
+    #SunRad (per second)
+    Sun: 2.0
+
+    #RadRecovery (per second)
+    Recovery: 0.5
+
+    #Resists (percent)
+    Resists:
+        Leather: 0.50
+        Gold: 0.90
+        Iron: 0.45
+        Diamond: 0.55
+
+# Player data
+PlayerData:
