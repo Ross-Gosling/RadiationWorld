@@ -12,6 +12,8 @@ public class DeathListener implements Listener
 	@EventHandler
 	public void onPlayerDeath(PlayerDeathEvent event)
 	{
+		// This method never being called
+		
 		// Gets dead player
 		Player player = event.getEntity();
 		
