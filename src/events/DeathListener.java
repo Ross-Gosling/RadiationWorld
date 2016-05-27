@@ -15,6 +15,10 @@ public class DeathListener implements Listener
 		// Gets dead player
 		Player player = event.getEntity();
 		
+		// Resets player health
+		player.setHealth(20.0);
+		player.setMaxHealth(20.0);
+		
 		// If player recieved lethal dose of radiation
 		if(Radiation.get(player) >= Radiation.dLethal)
 		{
@@ -24,8 +28,5 @@ public class DeathListener implements Listener
 		
 		// Clears player radiation
 		Radiation.set(player, 0.0);
-		
-		// Resets player health
-		player.setHealth(player.getMaxHealth());
 	}
 }
