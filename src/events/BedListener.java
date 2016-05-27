@@ -27,11 +27,6 @@ public class BedListener implements Listener {
 				// Sends player feedback
 				event.getPlayer().sendMessage(ChatColor.RED + "Radiation makes it unsafe to sleep here");
 			}
-			// Else bed inside safe haven
-			else 
-			{
-				
-			}
 		}
 	}
 }

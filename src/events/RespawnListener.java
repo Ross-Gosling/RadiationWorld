@@ -17,6 +17,7 @@ public class RespawnListener implements Listener
 		Radiation.set(player, 0.0);
 		
 		// Resets player health
+		player.setMaxHealth(20.0);
 		player.setHealth(player.getMaxHealth());
 	}
 }
