@@ -21,7 +21,7 @@ public class BedListener implements Listener {
 		if(player.getWorld().getEnvironment().equals(Environment.NORMAL))
 		{
 			// Gets the distance from the edge of the haven
-			double dDistFromHaven = Math.floor(player.getLocation().distance(player.getWorld().getSpawnLocation())) - Main.config().getDouble("Radiation.Overworld.Haven.Radius");
+			double dDistFromHaven = Math.floor(event.getBed().getLocation().distance(player.getWorld().getSpawnLocation())) - Main.config().getDouble("Radiation.Overworld.Haven.Radius");
 	
 			// If bed outside safe haven
 			if (dDistFromHaven > 0)
