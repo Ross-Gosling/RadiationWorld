@@ -14,6 +14,7 @@ import events.DeathListener;
 import events.JoinListener;
 import events.KickListener;
 import events.QuitListener;
+import events.RespawnListener;
 import events.SpawnListener;
 import functions.Radiation;
 
@@ -39,6 +40,7 @@ public class Main extends JavaPlugin
 		Bukkit.getServer().getPluginManager().registerEvents(new JoinListener(), plugin);
 		Bukkit.getServer().getPluginManager().registerEvents(new KickListener(), plugin);
 		Bukkit.getServer().getPluginManager().registerEvents(new QuitListener(), plugin);
+		Bukkit.getServer().getPluginManager().registerEvents(new RespawnListener(), plugin);
 		Bukkit.getServer().getPluginManager().registerEvents(new SpawnListener(), plugin);
 
 		// Loads all player radiation levels into hashmap

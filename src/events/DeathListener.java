@@ -12,8 +12,6 @@ public class DeathListener implements Listener
 	@EventHandler
 	public void onPlayerDeath(PlayerDeathEvent event)
 	{
-		// This method never being called
-		
 		// Gets dead player
 		Player player = event.getEntity();
 		
@@ -23,11 +21,5 @@ public class DeathListener implements Listener
 			// Sets death message appropriately
 			event.setDeathMessage(player.getName() + " was killed by radiation");
 		}
-		
-		// Clears player radiation
-		Radiation.set(player, 0.0);
-		
-		// Resets player health
-		player.setHealth(player.getMaxHealth());
 	}
 }
