@@ -21,12 +21,11 @@ public class DeathListener implements Listener
 			// Sets death message appropriately
 			event.setDeathMessage(player.getName() + " was killed by radiation");
 		}
-
+		
 		// Clears player radiation
 		Radiation.set(player, 0.0);
 		
 		// Resets player health
 		player.setMaxHealth(20.0);
-		player.setHealth(player.getMaxHealth());
 	}
 }
