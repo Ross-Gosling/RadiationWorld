@@ -1,6 +1,7 @@
 package events;
 
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerKickEvent;
 
@@ -8,7 +9,7 @@ import functions.Radiation;
 
 public class KickListener implements Listener 
 {
-	@EventHandler
+	@EventHandler(priority = EventPriority.NORMAL)
 	public void onPlayerKick(PlayerKickEvent event) 
 	{
 		// Saves player radiation level to config

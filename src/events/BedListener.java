@@ -3,6 +3,7 @@ package events;
 import org.bukkit.ChatColor;
 import org.bukkit.World.Environment;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBedEnterEvent;
 
@@ -10,7 +11,7 @@ import RadiationWorld.Main;
 
 public class BedListener implements Listener {
 
-	@EventHandler
+	@EventHandler(priority = EventPriority.NORMAL)
 	public void onPlayerBedEnter(PlayerBedEnterEvent event)
 	{
 		// If player in Overworld

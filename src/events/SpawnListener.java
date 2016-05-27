@@ -4,6 +4,7 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.CreatureSpawnEvent;
 
@@ -11,7 +12,7 @@ import RadiationWorld.Main;
 
 public class SpawnListener implements Listener 
 {
-	@EventHandler
+	@EventHandler(priority = EventPriority.NORMAL)
 	public void onMobSpawn(CreatureSpawnEvent event) 
 	{
 		// Gets type of entity spawned

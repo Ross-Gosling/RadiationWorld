@@ -1,17 +1,23 @@
 package events;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
+import RadiationWorld.Main;
 import functions.Radiation;
 
 public class DeathListener implements Listener 
 {
-	@EventHandler
+	@EventHandler(priority = EventPriority.NORMAL)
 	public void onPlayerDeath(PlayerDeathEvent event)
 	{
+    	// Logs to console
+    	Bukkit.getLogger().info("["+Main.pluginName+"] onPlayerDeath called");
+		
 		// Gets dead player
 		Player player = event.getEntity();
 		
@@ -24,8 +30,5 @@ public class DeathListener implements Listener
 		
 		// Clears player radiation
 		Radiation.set(player, 0.0);
-		
-		// Resets player health
-		player.setMaxHealth(20.0);
 	}
 }
