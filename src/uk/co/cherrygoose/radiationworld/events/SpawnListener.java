@@ -1,4 +1,4 @@
-package events;
+package uk.co.cherrygoose.radiationworld.events;
 
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;

@@ -1,4 +1,4 @@
-package functions;
+package uk.co.cherrygoose.radiationworld.functions;
 
 import java.util.HashMap;
 

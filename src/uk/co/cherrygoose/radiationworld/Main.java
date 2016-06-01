@@ -9,14 +9,14 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import events.BedListener;
-import events.DeathListener;
-import events.JoinListener;
-import events.KickListener;
-import events.QuitListener;
-import events.RespawnListener;
-import events.SpawnListener;
-import functions.Radiation;
+import uk.co.cherrygoose.radiationworld.events.BedListener;
+import uk.co.cherrygoose.radiationworld.events.DeathListener;
+import uk.co.cherrygoose.radiationworld.events.JoinListener;
+import uk.co.cherrygoose.radiationworld.events.KickListener;
+import uk.co.cherrygoose.radiationworld.events.QuitListener;
+import uk.co.cherrygoose.radiationworld.events.RespawnListener;
+import uk.co.cherrygoose.radiationworld.events.SpawnListener;
+import uk.co.cherrygoose.radiationworld.functions.Radiation;
 
 public class Main extends JavaPlugin 
 {

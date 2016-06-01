@@ -1,4 +1,4 @@
-package events;
+package uk.co.cherrygoose.radiationworld.events;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
@@ -6,7 +6,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import functions.Radiation;
+import uk.co.cherrygoose.radiationworld.functions.Radiation;
 
 public class JoinListener implements Listener 
 {

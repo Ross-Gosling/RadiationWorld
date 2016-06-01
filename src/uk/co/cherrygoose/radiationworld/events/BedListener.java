@@ -1,4 +1,4 @@
-package events;
+package uk.co.cherrygoose.radiationworld.events;
 
 import org.bukkit.ChatColor;
 import org.bukkit.World.Environment;
