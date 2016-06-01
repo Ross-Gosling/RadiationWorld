@@ -32,13 +32,13 @@ public class Radiation
 	    		double dRadIncrement = 0.0;
 	    		    		
 	    		// If Player in the Overworld
-	    		if (player.getWorld().getEnvironment().equals(Environment.NORMAL)) 
+	    		if(player.getWorld().getEnvironment().equals(Environment.NORMAL)) 
 	    		{
 	    			// Gets the distance from the edge of the haven
 	    			double dDistFromHaven = Math.floor(player.getLocation().distance(player.getWorld().getSpawnLocation())) - Main.config().getDouble("Radiation.Overworld.Haven.Radius");
 	
 	    			// If outside safe haven
-	    			if (dDistFromHaven > 0)
+	    			if(dDistFromHaven > 0)
 	    			{
 	        			// Gets the background radiation
 	        			double dBGRadiaiton = Main.config().getDouble("Radiation.Overworld.Background") / 20; // Divided by 20 to get per tick
@@ -59,10 +59,8 @@ public class Radiation
 	        			dRadIncrement += dRadiationGain;
 		    		}
 	    			
-	    			// Player under/close to direct sunlight, it's daytime and it's a clear sky
-	    			if ((player.getLocation().add(0, 1, 0).getBlock().getLightFromSky() >= (byte) 14) 
-	    			&& !((player.getWorld().getTime() > 12900) && (player.getWorld().getTime() < 23100))
-	    			&& !((player.getWorld().hasStorm()) || (player.getWorld().isThundering())))
+	    			// If Player in sunlight
+	    			if(inSunlight(player))
 	    			{
 	    				// Adds the sun's radiation to the increment
 	    				dRadIncrement += Main.config().getDouble("Radiation.Sun") / 20; // Divided by 20 to get per tick
@@ -70,14 +68,14 @@ public class Radiation
 	    		}
 	    		
 	    		// If Player in the Nether
-	    		else if (player.getWorld().getEnvironment().equals(Environment.NETHER)) 
+	    		else if(player.getWorld().getEnvironment().equals(Environment.NETHER)) 
 	    		{
 	    			// Adds the background radiation to the increment
 	    			dRadIncrement = Main.config().getDouble("Radiation.Nether.Background") / 20; // Divided by 20 to get per tick
 	    		}
 	    		
 	    		// If Player in the End
-	    		else if (player.getWorld().getEnvironment().equals(Environment.THE_END)) 
+	    		else if(player.getWorld().getEnvironment().equals(Environment.THE_END)) 
 	    		{
 	    			// Adds the background radiation to the increment
 	    			dRadIncrement = Main.config().getDouble("Radiation.End.Background") / 20; // Divided by 20 to get per tick
@@ -241,6 +239,23 @@ public class Radiation
 			// Kills player
 			player.addPotionEffect(new PotionEffect(PotionEffectType.HARM, 1, 0, false, false));
 		}
+	}
+	
+	private static boolean inSunlight(Player player)
+	{
+		// If it is daytime
+		if(!((player.getWorld().getTime() > 12900) && (player.getWorld().getTime() < 23100)) && !((player.getWorld().hasStorm()) || (player.getWorld().isThundering())))
+		{
+			// If Player in skylight level of 14 or greater
+			if(player.getLocation().add(0, 1, 0).getBlock().getLightFromSky() >= (byte) 14) 
+			{
+				// Returns True: Player in sunlight
+				return true;
+			}
+		}
+		
+		// Returns False: Player not in sunlight
+		return false;
 	}
 	
 	@SuppressWarnings("deprecation")
