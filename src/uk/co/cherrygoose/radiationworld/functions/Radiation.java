@@ -5,9 +5,11 @@ import java.util.HashMap;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.World.Environment;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -243,14 +245,52 @@ public class Radiation
 	
 	private static boolean inSunlight(Player player)
 	{
-		// If it is daytime
-		if(!((player.getWorld().getTime() > 12900) && (player.getWorld().getTime() < 23100)) && !((player.getWorld().hasStorm()) || (player.getWorld().isThundering())))
+		// If the sky is clear
+		if(!((player.getWorld().hasStorm()) || (player.getWorld().isThundering())))
 		{
-			// If Player in skylight level of 14 or greater
-			if(player.getLocation().add(0, 1, 0).getBlock().getLightFromSky() >= (byte) 14) 
+			// If it's daytime
+			if(!((player.getWorld().getTime() > 12900) && (player.getWorld().getTime() < 23100)))
 			{
-				// Returns True: Player in sunlight
-				return true;
+				// Defines var for the block at player head location
+				Block headBlock = player.getLocation().add(0, 1, 0).getBlock();
+				
+				// If Player in water
+				if((headBlock.getType().equals(Material.WATER)) || (headBlock.getType().equals(Material.STATIONARY_WATER)))
+				{
+					// Defines block at the surface of the water
+					Block surfaceBlock = headBlock.getLocation().add(0, 1, 0).getBlock();
+					// Declares depth of 1 block
+					int depth = 1;
+					
+					// While the surface block is still actually water
+					while((surfaceBlock.getType().equals(Material.WATER)) || (surfaceBlock.getType().equals(Material.STATIONARY_WATER)))
+					{
+						// Sets surface block to one above current position
+						surfaceBlock = surfaceBlock.getLocation().add(0,1,0).getBlock();
+						// Increments depth
+						depth++;
+					}
+					
+					// If surface in skylight level of 14 or greater
+					if(surfaceBlock.getLightFromSky() >= (byte) 14) 
+					{
+						// If Player is equal to or less than 4 blocks deep in water
+						if(depth <= 4)
+						{
+							// Returns True: Player in sunlight and not deep enough to avoid radiation
+							return true;
+						}
+					}
+				}
+				else
+				{
+					// If Player in skylight level of 14 or greater
+					if(headBlock.getLightFromSky() >= (byte) 14) 
+					{
+						// Returns True: Player in sunlight
+						return true;
+					}
+				}
 			}
 		}
 		
