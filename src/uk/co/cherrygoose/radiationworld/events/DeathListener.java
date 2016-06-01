@@ -1,13 +1,11 @@
 package uk.co.cherrygoose.radiationworld.events;
 
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
-import uk.co.cherrygoose.radiationworld.Main;
 import uk.co.cherrygoose.radiationworld.functions.Radiation;
 
 public class DeathListener implements Listener 
@@ -15,9 +13,6 @@ public class DeathListener implements Listener
 	@EventHandler(priority = EventPriority.NORMAL)
 	public void onPlayerDeath(PlayerDeathEvent event)
 	{
-    	// Logs to console
-    	Bukkit.getLogger().info("["+Main.pluginName+"] onPlayerDeath called");
-		
 		// Gets dead player
 		Player player = event.getEntity();
 		
