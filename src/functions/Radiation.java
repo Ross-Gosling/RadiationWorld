@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import RadiationWorld.Main;
+import uk.co.cherrygoose.radiationworld.Main;
 
 public class Radiation 
 {

@@ -4,7 +4,7 @@ version: 1.0
 description: Fills the world with deadly radiation and corresponding features.
 author: RossGosling
 
-main: RadiationWorld.Main
+main: uk.co.cherrygoose.radiationworld.Main
 database: false
 
 commands:

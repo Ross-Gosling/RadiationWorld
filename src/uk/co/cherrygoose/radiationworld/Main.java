@@ -1,4 +1,4 @@
-package RadiationWorld;
+package uk.co.cherrygoose.radiationworld;
 
 import java.util.List;
 

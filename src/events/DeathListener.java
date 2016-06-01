@@ -7,8 +7,8 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
-import RadiationWorld.Main;
 import functions.Radiation;
+import uk.co.cherrygoose.radiationworld.Main;
 
 public class DeathListener implements Listener 
 {

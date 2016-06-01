@@ -7,7 +7,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBedEnterEvent;
 
-import RadiationWorld.Main;
+import uk.co.cherrygoose.radiationworld.Main;
 
 public class BedListener implements Listener {
 
