@@ -104,28 +104,34 @@ public class Main extends JavaPlugin
     
     public static YamlConfiguration loadYml(String sDirectory)
     {  
+    	// Declares new YamlConfig
         YamlConfiguration yml = new YamlConfiguration();
         
         try
         {
+        	// Loads the ymlfile
             yml.load(sDirectory);
         }
         catch(FileNotFoundException e)
         {
             try
             {
-                yml.save(sDirectory);//Create the file if it didn't exist
+            	// Creates a new yml file if one doesn't exist
+                yml.save(sDirectory);
             }
             catch(Exception e2)
             {
+            	// Prints error
             	e.printStackTrace();
             }
         }
         catch(Exception e)
         {
+        	// Prints error
         	e.printStackTrace();
         }
         
+        // Returns yml file
         return yml;
     }
 
@@ -133,14 +139,19 @@ public class Main extends JavaPlugin
     {
         try
         {
+        	// Saves yml file
         	ymlConfig.save(sDirectory);
+        	
+        	// Returns true: file saved
             return true;
         }
         catch(Exception e)
         {
+        	// Prints error
         	e.printStackTrace();
         }
         
+        // Returns false: couldn't save file
         return false;
     }
 }
