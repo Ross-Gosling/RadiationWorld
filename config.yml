@@ -16,10 +16,6 @@ Radiation:
             Radius: 150
             #Dist takes to recieve full BGRadiation
             Buffer: 850
-        #Animal settings
-        Animals:
-            #Chance to spawn (% of vanilla chance)
-            ChanceToSpawn: 5.0
 
     #The Nether settings
     Nether:
@@ -35,7 +31,7 @@ Radiation:
     Sun: 0.5
 
     #RadRecovery (per second)
-    Recovery: 0.5
+    Recovery: 0.3
 
     #Resists (percent)
     Resists:
@@ -43,6 +39,3 @@ Radiation:
         Gold: 0.80
         Iron: 0.50
         Diamond: 0.40
-
-# Player data
-PlayerData:

@@ -19,8 +19,9 @@ public class Radiation
 {
 	// HashMap for storing online player radiation levels
 	private static HashMap<Player, Double> radiation = new HashMap<Player, Double>();
+	// Public Double for use in radiation calculations
 	public static double dLethal = Main.config().getDouble("Radiation.Lethal");
-	
+
 	public static void update()
 	{
 		// For all Players
@@ -407,12 +408,19 @@ public class Radiation
 	{
 		// If player exists in HashMap
 		if(radiation.get(player) != null)
-		{
-			// Sets values in config to value in HashMap
-			Main.config().set("PlayerData." + player.getUniqueId() + ".Radiation", radiation.get(player).doubleValue());
-			// Saves config
-			Main.plugin().saveConfig();
+		{		
+			// If player is not in file
+			if(!Main.playerdata().contains(player.getUniqueId().toString()))
+			{
+				Main.playerdata().createSection(player.getUniqueId() + ".Radiation");
+			}
+			
+			// Sets values in playerdata to value in HashMap
+			Main.playerdata().set(player.getUniqueId() + ".Radiation", radiation.get(player).doubleValue());
 		}
+		
+		// Saves player data file
+		Main.saveYml(Main.playerdata(), "plugins/" + Main.pluginName + "/playerdata.yml");
 	}
 	
 	public static void loadToHashMap() 
@@ -426,10 +434,7 @@ public class Radiation
 	}
 	public static void loadToHashMap(Player player) 
 	{
-		// Saves the default config
-		Main.plugin().saveDefaultConfig();
-
 		// Puts player radiation value in HashMap
-		radiation.put(player, new Double(Main.config().getDouble("PlayerData." + player.getUniqueId() + ".Radiation")));
+		radiation.put(player, new Double(Main.playerdata().getDouble(player.getUniqueId() + ".Radiation")));
 	}
 }
